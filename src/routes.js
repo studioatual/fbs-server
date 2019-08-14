@@ -10,10 +10,10 @@ const routes = new Router();
 
 routes.get('/', (req, res) => res.json({ message: 'Hello World!' }));
 routes.post('/login', AuthController.store);
-
-// routes.use(authMiddleware);
-
 routes.get('/products', ProductController.index);
+
+routes.use(authMiddleware);
+
 routes.get('/orders', OrderController.index);
 routes.post('/orders', OrderController.store);
 
