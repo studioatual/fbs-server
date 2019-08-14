@@ -11,7 +11,7 @@ const routes = new Router();
 routes.get('/', (req, res) => res.json({ message: 'Hello World!' }));
 routes.post('/login', AuthController.store);
 
-routes.use(authMiddleware);
+// routes.use(authMiddleware);
 
 routes.get('/products', ProductController.index);
 routes.get('/orders', OrderController.index);
